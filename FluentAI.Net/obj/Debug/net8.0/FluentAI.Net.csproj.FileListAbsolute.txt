@@ -1,0 +1,12 @@
+C:\Users\jerma\source\repos\FluentAI.Net\FluentAI.Net\bin\Debug\net8.0\FluentAI.Net.deps.json
+C:\Users\jerma\source\repos\FluentAI.Net\FluentAI.Net\bin\Debug\net8.0\FluentAI.Net.dll
+C:\Users\jerma\source\repos\FluentAI.Net\FluentAI.Net\bin\Debug\net8.0\FluentAI.Net.pdb
+C:\Users\jerma\source\repos\FluentAI.Net\FluentAI.Net\obj\Debug\net8.0\FluentAI.Net.csproj.AssemblyReference.cache
+C:\Users\jerma\source\repos\FluentAI.Net\FluentAI.Net\obj\Debug\net8.0\FluentAI.Net.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jerma\source\repos\FluentAI.Net\FluentAI.Net\obj\Debug\net8.0\FluentAI.Net.AssemblyInfoInputs.cache
+C:\Users\jerma\source\repos\FluentAI.Net\FluentAI.Net\obj\Debug\net8.0\FluentAI.Net.AssemblyInfo.cs
+C:\Users\jerma\source\repos\FluentAI.Net\FluentAI.Net\obj\Debug\net8.0\FluentAI.Net.csproj.CoreCompileInputs.cache
+C:\Users\jerma\source\repos\FluentAI.Net\FluentAI.Net\obj\Debug\net8.0\FluentAI.Net.dll
+C:\Users\jerma\source\repos\FluentAI.Net\FluentAI.Net\obj\Debug\net8.0\refint\FluentAI.Net.dll
+C:\Users\jerma\source\repos\FluentAI.Net\FluentAI.Net\obj\Debug\net8.0\FluentAI.Net.pdb
+C:\Users\jerma\source\repos\FluentAI.Net\FluentAI.Net\obj\Debug\net8.0\ref\FluentAI.Net.dll
