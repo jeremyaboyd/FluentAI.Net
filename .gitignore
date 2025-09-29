@@ -1,0 +1,12 @@
+FluentAI.Net/bin/Debug/
+FluentAI.Net/bin/Release/
+FluentAI.Net/obj/Debug/
+FluentAI.Net/obj/Release/
+FluentAI.Net/bin/
+FluentAI.Net/obj/
+FluentAI.Net/.vs/
+FluentAI.Net/.vscode/
+FluentAI.Net/.idea/
+FluentAI.Net/.env/
+FluentAI.Net/.env.local/
+FluentAI.Net/.env.development.local/
