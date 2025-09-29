@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FyIpGIAKjis=",
+  "dgSpecHash": "0+4tw7KFpLs=",
   "success": true,
-  "projectFilePath": "C:\\Users\\jerma\\source\\repos\\FluentAI.Net\\FluentAI.Net\\FluentAI.Net.csproj",
+  "projectFilePath": "C:\\Users\\jerma\\OneDrive\\Desktop\\Projects\\FluentAI.Net\\FluentAI.Net\\FluentAI.Net.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jerma\\.nuget\\packages\\openai\\2.1.0\\openai.2.1.0.nupkg.sha512",
     "C:\\Users\\jerma\\.nuget\\packages\\system.clientmodel\\1.2.1\\system.clientmodel.1.2.1.nupkg.sha512",
