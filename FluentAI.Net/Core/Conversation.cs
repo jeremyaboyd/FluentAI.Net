@@ -1,5 +1,6 @@
 using System.Text.Json;
 using FluentAI.Net.Models;
+using OpenAI.Chat;
 
 namespace FluentAI.Net.Core
 {
@@ -75,5 +76,19 @@ namespace FluentAI.Net.Core
 
             return await Client.SendMessageAsync<TOut>(systemMessage, Messages, functions);
         }
+
+#pragma warning disable OPENAI001
+        public string GetResponse(string message, OpenAI.Responses.ResponseReasoningOptions? options = null)
+        {
+            return GetResponseAsync(message, options).GetAwaiter().GetResult();
+        }
+
+        public async Task<string> GetResponseAsync(string message, OpenAI.Responses.ResponseReasoningOptions? options = null)
+        {
+            Messages.Add(new AIMessage { Role = "user", Content = message });
+
+            return await Client.GetResponseAsync(systemPrompt, Messages, options);
+        }
+#pragma warning restore OPENAI001
     }
 } 

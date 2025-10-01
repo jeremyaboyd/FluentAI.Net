@@ -2,6 +2,7 @@ using System.Text.Json;
 using FluentAI.Net.Models;
 using FluentAI.Net.Providers;
 using FluentAI.Net.Utils;
+using OpenAI.Chat;
 
 namespace FluentAI.Net.Core
 {
@@ -159,6 +160,18 @@ namespace FluentAI.Net.Core
 
             return default;
         }
+
+#pragma warning disable OPENAI001
+        internal async Task<string> GetResponseAsync(string systemPrompt, List<AIMessage> messages, OpenAI.Responses.ResponseReasoningOptions? reasoningOptions = null)
+        {
+            if (provider is not OpenAIProvider openAIProvider)
+            {
+                throw new NotSupportedException("GetResponse with reasoning options is only supported with OpenAI provider");
+            }
+
+            return await openAIProvider.GetResponseAsync(systemPrompt, messages, reasoningOptions);
+        }
+#pragma warning restore OPENAI001
 
         private AITool DelegateToAITool(Delegate @delegate)
         {

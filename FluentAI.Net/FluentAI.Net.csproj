@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="openai" Version="2.1.0" />
+    <PackageReference Include="openai" Version="2.5.0" />
   </ItemGroup>
 
 </Project>

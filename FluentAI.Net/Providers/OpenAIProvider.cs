@@ -1,6 +1,8 @@
 using OpenAI;
 using OpenAI.Chat;
+using OpenAI.Responses;
 using FluentAI.Net.Models;
+using System.Text;
 
 namespace FluentAI.Net.Providers
 {
@@ -134,5 +136,47 @@ namespace FluentAI.Net.Providers
 
             return result;
         }
+
+#pragma warning disable OPENAI001
+        public async Task<string> GetResponseAsync(string systemPrompt, List<AIMessage> messages, ResponseReasoningOptions? reasoningOptions = null)
+        {
+            var responseClient = client.GetOpenAIResponseClient(model);
+            
+            // Build the full input text with system prompt and message history
+            var inputBuilder = new StringBuilder();
+            inputBuilder.AppendLine(systemPrompt);
+            inputBuilder.AppendLine();
+            
+            foreach (var msg in messages)
+            {
+                inputBuilder.AppendLine($"{msg.Role}: {msg.Content}");
+            }
+
+            var options = new ResponseCreationOptions();
+            if (reasoningOptions != null)
+            {
+                options.ReasoningOptions = reasoningOptions;
+            }
+
+            OpenAIResponse response = await responseClient.CreateResponseAsync(
+                userInputText: inputBuilder.ToString(),
+                options);
+
+            // Extract the text output from the response
+            var textBuilder = new StringBuilder();
+            foreach (var item in response.OutputItems)
+            {
+                if (item is MessageResponseItem messageItem)
+                {
+                    textBuilder.Append(messageItem.Content.FirstOrDefault()?.Text);
+                }
+            }
+
+            string assistantReply = textBuilder.ToString();
+            messages.Add(new AIMessage { Role = "assistant", Content = assistantReply });
+
+            return assistantReply;
+        }
+#pragma warning restore OPENAI001
     }
 } 
