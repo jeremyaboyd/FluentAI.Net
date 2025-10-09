@@ -119,6 +119,31 @@ foreach (var item in analysis)
 }
 ```
 
+### Reasoning with OpenAI (o3-mini, o1, etc.)
+
+```csharp
+using OpenAI.Responses;
+
+var client = FluentClient.UseOpenAI("your-api-key", "o3-mini");
+var chat = client.StartConversation("You are a strategic thinking assistant.");
+
+// Simple reasoning request
+var response = await chat.GetResponseAsync(
+    "What's the optimal strategy to win at poker?"
+);
+Console.WriteLine(response);
+
+// With custom reasoning effort level
+var detailedResponse = await chat.GetResponseAsync(
+    "Explain the implications of quantum computing on cryptography.",
+    new ResponseReasoningOptions()
+    {
+        ReasoningEffortLevel = ResponseReasoningEffortLevel.High
+    }
+);
+Console.WriteLine(detailedResponse);
+```
+
 ### Conversation State
 
 ```csharp
@@ -164,6 +189,10 @@ public class Conversation
     // Send messages with images
     public T? SendWithImage<T>(object input, byte[] imageData, params Delegate[] functions);
     public async Task<T?> SendWithImageAsync<T>(object input, byte[] imageData, params Delegate[] functions);
+    
+    // Get text responses with reasoning (OpenAI only)
+    public string GetResponse(string message, OpenAI.Responses.ResponseReasoningOptions? options = null);
+    public async Task<string> GetResponseAsync(string message, OpenAI.Responses.ResponseReasoningOptions? options = null);
 }
 ```
 
