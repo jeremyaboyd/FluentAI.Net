@@ -9,12 +9,6 @@ namespace FluentAI.Net.Examples
     {
         public static async Task RunExamples()
         {
-            // OLD API (DreamEngine):
-            // var engine = Engine.CreateOpenAI("api-key", "gpt-4");
-            // var dream = engine.CreateDream("You are a helpful assistant.");
-            // var response = dream.PushFragment<string>("Hello, world!");
-
-            // NEW API (FluentAI.Net):
             var client = FluentClient.UseOpenAI("your-api-key", "gpt-4");
             var chat = client.StartConversation("You are a helpful assistant.");
             var response = await chat.SendAsync<string>("Hello, world!");
@@ -65,4 +59,5 @@ namespace FluentAI.Net.Examples
         public int Temperature { get; set; }
         public string Condition { get; set; } = "";
     }
+
 } 
